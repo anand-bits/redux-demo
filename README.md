@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Cake Container Component with Redux Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React component `CakeContainer` integrated with Redux for managing the state related to cakes. It displays the number of cakes available and provides a button to buy a cake.
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+The purpose of the code is to demonstrate how to connect a React component to a Redux store, retrieve state from the store, and dispatch actions to update the state.
 
-### `npm start`
+## Code Explanation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Imports
+- `react`: Imported to create React components.
+- `buyCake` action creator: Imported from `../redux/cakes/cakeActions` to dispatch the action for buying a cake.
+- `connect` function: Imported from `react-redux` to connect the React component to the Redux store.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### CakeContainer Function Component
+- Defines a functional React component named `CakeContainer`.
+- Accepts `props` as an argument.
+- Renders a `<div>` element containing the number of cakes (`props.numOfCakes`) and a button to buy a cake.
+- When the button is clicked, it invokes the `props.buyCake` function.
 
-### `npm test`
+### mapStateToProps Function
+- Maps the Redux store's state to the component's props.
+- Returns an object with a property `numOfCakes`, which holds the number of cakes from the Redux store's state.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### mapDispatchToProps Function
+- Maps Redux action creators to the component's props.
+- Returns an object with a property `buyCake`, which is a function that dispatches the `buyCake` action when called.
 
-### `npm run build`
+### Connect Function
+- Connects the `CakeContainer` component to the Redux store.
+- It uses `mapStateToProps` to map the Redux store's state to the component's props.
+- It uses `mapDispatchToProps` to map Redux action creators to the component's props.
+- Finally, it wraps the `CakeContainer` component with the Redux store, enabling it to access the Redux store's state and dispatch actions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
+- You can use this code as a reference for integrating Redux with React components.
+- Ensure that you have Redux and React-Redux installed in your project.
+- Modify the `CakeContainer` component and associated Redux files as per your application requirements.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

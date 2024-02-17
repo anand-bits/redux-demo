@@ -2,14 +2,14 @@ import react from 'react'
 
 import { buyCake } from '../redux/cakes/cakeActions'
 import { Connect, connect } from 'react-redux'
-function CakeContainer()
+function CakeContainer(props)
 {
 
     return (
         <div>
            <h2>
-            Number of Cake </h2> 
-            <button> Buy Cake</button>
+            Number of Cake -{props.numOfCakes} </h2> 
+            <button onClick={props.buyCake}> Buy Cake</button>
         </div>
     )
 }
