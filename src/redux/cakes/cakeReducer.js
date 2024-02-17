@@ -1,4 +1,4 @@
-import { BUY_CAKE } from "./cakeTypes"}
+import { BUY_CAKE } from "./cakeTypes"
 
 
 const intialState={
@@ -12,7 +12,7 @@ const cakeReducer=(state=intialState,action)=>
     {
         case BUY_CAKE:return{
             ...state,
-            numOfCakes:state.numOfCakes-1;
+            numOfCakes:state.numOfCakes-1
 
         }
         default:return state
