@@ -38,6 +38,4 @@ The purpose of the code is to demonstrate how to connect a React component to a 
 - Ensure that you have Redux and React-Redux installed in your project.
 - Modify the `CakeContainer` component and associated Redux files as per your application requirements.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Its was Learning 
